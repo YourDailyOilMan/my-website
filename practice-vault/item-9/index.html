@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .intro-1 {
+        padding: 15px 20px;
+        color: white;
+        background-color: #aaa;
+        border-radius: 8px;
+        font-size: 20px;
+      }
+      .intro-2 {
+        padding: 15px 20px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 8px;
+        font-size: 20px;
+      }
+      .heading {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 30px;
+      }
+      .choice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      .fancy-1 {
+        color: crimson;
+        font-size: 46px;
+      }
+      .fancy-2 {
+        text-decoration: underline;
+        color: #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="choice">
+      <h1 class="heading">Hello ...</h1>
+      <div>
+        <button class="intro-1" onclick="simpleIntro()">
+          Simple introduction
+        </button>
+        <button class="intro-2" onclick="fancyIntro()">Fancy introduction</button>
+      </div>
+    </div>
+    <script>
+      function simpleIntro() {
+        let simpleMessage = "Hello, I'm Raymond, I'm 13";
+
+        document.querySelector('.heading').innerHTML = simpleMessage;
+      }
+      function fancyIntro() {
+        let fancyMessage = `Hello, I'm <span class="fancy-1">Raymond</span>, <span class="fancy-2">I'm 13</span>`;
+
+        document.querySelector('.heading').innerHTML = fancyMessage;
+      }
+    </script>
+  </body>
+</html>

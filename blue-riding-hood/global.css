@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+body {
+  background: white
+    url('https://labs.learnosity.com/solutions/sales-enablement/custom-ui/blue-riding-hood/assets/img/bricks.png')
+    repeat;
+}
+.container {
+  margin: 20px auto;
+  max-width: 1200px;
+  min-height: 700px;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+  box-shadow: 0px -1px 49px -1px gray;
+  background-color: white;
+  position: relative;
+}
+.indie-flower-regular {
+  font-family: 'Indie Flower', cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.title h1 {
+  margin: 1px;
+}
+.lobster-regular {
+  font-family: 'Lobster', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.primary-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1ca4ed;
+  color: #fff;
+  padding: 10px 40px;
+  border-radius: 8px;
+  font-size: 30px;
+  border-bottom: 5px solid #1ca4ed;
+  margin-bottom: 30px;
+  border: none;
+  text-decoration: none;
+}
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.blue {
+  color: #1ca4ed;
+}
+.tilt-in-fwd-tr {
+  animation: tilt-in-fwd-tr 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes tilt-in-fwd-tr {
+  0% {
+    transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px)
+      skew(-35deg, 10deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    opacity: 1;
+  }
+}
+.heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+.tracking-in-expand {
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s
+    both;
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.slide-in-bck-center {
+  animation: slide-in-bck-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes slide-in-bck-center {
+  0% {
+    transform: translateZ(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+.story {
+  margin-top: 10px;
+}
+.story-1 {
+  margin-bottom: 25px;
+}
+.story-2 {
+  margin-bottom: 20px;
+}
+.text-bold {
+  font-weight: bold;
+}
+.animated-rainbow {
+  animation: rainbowShadow 7s infinite;
+}
+
+@keyframes rainbowShadow {
+  0% {
+    box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.8); /* Red */
+  }
+  16% {
+    box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.8); /* Orange */
+  }
+  33% {
+    box-shadow: 0 0 10px 2px rgba(255, 255, 0, 0.8); /* Yellow */
+  }
+  50% {
+    box-shadow: 0 0 10px 2px rgba(0, 128, 0, 0.8); /* Green */
+  }
+  66% {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 255, 0.8); /* Blue */
+  }
+  83% {
+    box-shadow: 0 0 10px 2px rgba(75, 0, 130, 0.8); /* Indigo */
+  }
+  100% {
+    box-shadow: 0 0 10px 2px rgba(238, 130, 238, 0.8); /* Violet */
+  }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+      .red {
+        color: red;
+      }
+      .orange {
+        color: orange;
+      }
+      .yellow {
+        color: #FAD585;
+      }
+      .green {
+        color: green;
+      }
+      .blue {
+        color: blue;
+      }
+      .purple {
+        color: #6300A9;
+      }
+      .pink {
+        color: #FF58AE;
+      }
+    </style>
+  </head>
+  <body>
+    <!--HTML-->
+    <!--1-->
+    <img
+      class="img-1"
+      src="https://www.bing.com/th/id/OGC.81adc4cf348e8294929204607fcdf85a?pid=1.7&rurl=https%3a%2f%2fmedia.tenor.com%2fItloOf_4U-AAAAAi%2ftoothless-dancing.gif&ehk=oJMJRjX3RhSfTgFtBrOcnXAfQ%2bnM9CiVIjdRCoNwlgQ%3d"
+    />
+    <button class="button-1" onclick="SwitchImage()">Switch Image</button>
+
+    <!--2-->
+    <ul class="list-1"></ul>
+    <div>
+      <input class="input-1" /><button class="button-2" onclick="ListAdder()">
+        Add new item
+      </button>
+    </div>
+
+    <!--3-->
+    <p class="text-1">
+      Quote of the day "We are divided by grade, united by fear"
+    </p>
+    <button class="button-3" onclick="TextHider()">Hide/Show</button>
+
+    <!--4-->
+    <div class="text-2 red">Raymond</div>
+    <button class="button-4" onclick="ChangeTextColor()">Change Color</button>
+
+    <!--5-->
+    <input class="input-2" type="number">
+    <input class="input-3" type="number">
+    <button class="button-5" onclick="Calculator()">Add</button>
+    <div class="result-1"><div>
+
+    <!--functions-->
+    <script>
+      // 1
+      function SwitchImage() {
+        let img1 = document.querySelector('.img-1');
+        img1.src =
+          'https://media.tenor.com/xpq260nLRyEAAAAd/bruh_cat_meme_text2345-bruh-cat.gif';
+      }
+
+      // 2
+      function ListAdder() {
+        let list1 = document.querySelector('.list-1');
+        let input1 = document.querySelector('.input-1');
+        let inputValue = input1.value;
+        list1.innerHTML = `${list1.innerHTML}<li>${inputValue}</li>`;
+      }
+
+      // 3
+      function TextHider() {
+        let text1 = document.querySelector('.text-1');
+
+        if (text1.classList.contains('hidden')) {
+          text1.classList.remove('hidden');
+        } else {
+          text1.classList.add('hidden');
+        }
+      }
+
+      // 4
+      function ChangeTextColor() {
+        let text2 = document.querySelector('.text-2');
+
+        if (text2.classList.contains('red')) {
+          text2.classList.remove('red');
+          text2.classList.add('orange');
+        } else if (text2.classList.contains('orange')) {
+          text2.classList.remove('orange');
+          text2.classList.add('yellow');
+        } else if (text2.classList.contains('yellow')) {
+          text2.classList.remove('yellow');
+          text2.classList.add('green');
+        } else if (text2.classList.contains('green')) {
+          text2.classList.remove('green');
+          text2.classList.add('blue')
+        } else if (text2.classList.contains('blue')) {
+          text2.classList.remove('blue');
+          text2.classList.add('purple');
+        } else if (text2.classList.contains('purple')) {
+          text2.classList.remove('purple');
+          text2.classList.add('pink')
+        } else if (text2.classList.contains('pink')) {
+          text2.classList.remove('pink');
+          text2.classList.add('red');
+        }
+      }
+
+      // 5
+      function Calculator() {
+        let input2 = Number(document.querySelector('.input-2').value);
+        let input3 = Number(document.querySelector('.input-3').value);
+
+      }
+    </script>
+  </body>
+</html>

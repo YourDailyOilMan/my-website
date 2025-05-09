@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .score {
+        height: 50px;
+        font-size: 30px;
+        border-radius: 8px;
+        border: 2px solid #ccc;
+        width: 350px;
+        text-align: center;
+      }
+      .button {
+        border-radius: 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 40px;
+        font-size: 24px;
+        margin-top: 20px;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="question">Tell me my grade</h1>
+      <input type="number" class="input" placeholder="My score..." />
+      <button class="button">Check my grade</button>
+    </div>
+    <script>
+      function checkGrade () {
+        let studentScore = document.querySelector('.input').value;
+        let result;
+
+        if (studentScore => 90 ) {
+          result = 'A';
+        } else if (studentScore => 80) {
+          result = 'B';
+        } else if (studentScore => 70) {
+          result = 'C';
+        } else if (studentScore => 60) {
+          result = 'D';
+        } else {
+          result = 'F';
+        }
+        document.querySelector('.result').innerHTML = ;
+      }
+    </script>
+  </body>
+</html>

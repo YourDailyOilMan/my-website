@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ray</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+      body {
+        font-size: 14px;
+        background-color: #0e0e0e;
+        color: #fff;
+        font-family: 'Orbitron', sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+      }
+      .Header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        display: flex;
+        color: #f00;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .logo img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+      }
+      .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+      }
+      .menu a {
+        color: grey;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .menu .active {
+        color: white;
+        background-color: red;
+        border-radius: 4px;
+      }
+      .summary {
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        margin-top: 50px;
+      }
+      .summary-item-title {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .summary-item-content {
+        text-align: center;
+        display: flex;
+        gap: 30px;
+      }
+      .summary-item-number {
+        font-size: 35px;
+      }
+      .summary-item-text {
+        color: grey;
+      }
+      .facts {
+        display: flex;
+        margin: 50px;
+      }
+      .kitty {
+        flex: 1;
+        text-align: center;
+      }
+      .kitty img {
+        width: 300px;
+      }
+      .true-fact {
+        font-size: 30px;
+        border-bottom: 5px solid red;
+      }
+      .fun {
+        flex: 1;
+      }
+      .fact li {
+        padding-top: 15px;
+      }
+      .container {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .favourite-title {
+        font-size: 30px;
+        border-bottom: 5px solid red;
+      }
+      .favourite-video {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 30px;
+        gap: 30px;
+        border-width: 5px;
+      }
+
+      .animated-rainbow {
+        animation: rainbowShadow 10s infinite;
+      }
+
+      @keyframes rainbowShadow {
+        0% {
+          box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.8); /* Red */
+        }
+        16% {
+          box-shadow: 0 0 20px 2px rgba(255, 165, 0, 0.8); /* Orange */
+        }
+        33% {
+          box-shadow: 0 0 10px 2px rgba(255, 255, 0, 0.8); /* Yellow */
+        }
+        50% {
+          box-shadow: 0 0 10px 2px rgba(0, 128, 0, 0.8); /* Green */
+        }
+        66% {
+          box-shadow: 0 0 10px 2px rgba(0, 0, 255, 0.8); /* Blue */
+        }
+        83% {
+          box-shadow: 0 0 10px 2px rgba(75, 0, 130, 0.8); /* Indigo */
+        }
+        100% {
+          box-shadow: 0 0 10px 2px rgba(238, 130, 238, 0.8); /* Violet */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="Header">
+        <div class="location">Sydney, AU</div>
+        <div class="logo">
+          <img class="animated-rainbow" src="https://i.imgur.com/yhnwhe1.png" />
+          <div>RAY D</div>
+        </div>
+
+        <div class="menu">
+          <a class="active">Home</a>
+          <a>My Games</a>
+          <a>My Friends List</a>
+        </div>
+      </div>
+      <div class="summary">
+        <div class="summary-item">
+          <div class="summary-item-title">Watched</div>
+          <div class="summary-item-content">
+            <div>
+              <div class="summary-item-number">220</div>
+              <div class="summary-item-text">Movies</div>
+            </div>
+            <div>
+              <div class="summary-item-number">20</div>
+              <div class="summary-item-text">Series</div>
+            </div>
+            <div>
+              <div class="summary-item-number">03</div>
+              <div class="summary-item-text">Docs</div>
+            </div>
+          </div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-item-title">Games Played</div>
+          <div class="summary-item-content">
+            <div>
+              <div class="summary-item-number">50</div>
+              <div class="summary-item-text">Action</div>
+            </div>
+            <div>
+              <div class="summary-item-number">45</div>
+              <div class="summary-item-text">RPG</div>
+            </div>
+            <div>
+              <div class="summary-item-number">10</div>
+              <div class="summary-item-text">FPS</div>
+            </div>
+          </div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-item-title">Time spent sleeping</div>
+          <div class="summary-item-content">
+            <div>
+              <div class="summary-item-number">5</div>
+              <div class="summary-item-text">Years</div>
+            </div>
+            <div>
+              <div class="summary-item-number">61</div>
+              <div class="summary-item-text">Months</div>
+            </div>
+            <div>
+              <div class="summary-item-number">1827</div>
+              <div class="summary-item-text">Days</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="kitty">
+          <img
+            src="https://66.media.tumblr.com/51ef48f1ce3ecf9344c1e77c0be026c7/tumblr_njacw4G0Vq1r3f8v2o1_640.gif"
+          />
+        </div>
+        <div class="fun">
+          <div class="true-fact">True facts</div>
+          <div class="fact">
+            <ul>
+              <li>Sleepy all day</li>
+              <li>Good at art and desgining</li>
+              <li>Love math, history & technology</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="favourite-section">
+        <div class="favourite-title">My Favourite Videos</div>
+        <div class="favourite-video">
+          <iframe
+            class="animated-rainbow"
+            src="https://www.youtube.com/embed/TofBwY63OSk?si=8bWolwKgJvCG7iIO"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            class="animated-rainbow"
+            src="https://www.youtube.com/embed/KNaCJYX-mgY?si=h7pJ6kj3yqjfRSsp"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            class="animated-rainbow"
+            src="https://www.youtube.com/embed/0z0x0pZzGzg?si=pZ1KWBpq8dzyzMjC"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>

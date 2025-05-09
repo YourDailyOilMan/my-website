@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=SUSE:wght@100..800&display=swap');
+
+      .red-christmas-background {
+        background: url('https://images.unsplash.com/photo-1511268011861-691ed210aae8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+          no-repeat center/cover;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      .container {
+        width: 600px;
+        height: 600px;
+        background: url('https://wallpapers-clan.com/wp-content/uploads/2024/03/starfall-night-sky-mountains-aesthetic-gif-preview-desktop-wallpaper.gif');
+        border: 10px solid white;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5), 0 0 30px inset black;
+        margin-left: 120px;
+        transform: rotate(-2deg);
+        position: relative;
+        overflow: hidden;
+      }
+      .trees {
+        width: 950px;
+        position: absolute;
+        bottom: -300px;
+        left: -100px;
+      }
+      .snow {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0.2;
+      }
+      .pin {
+        position: absolute;
+        top: 1px;
+        right: 2px;
+        width: 60px;
+      }
+      .santa {
+        width: 300px;
+      }
+      .text {
+        font-size: 30px;
+        color: crimson;
+        width: 300px;
+        text-shadow: 1px 1px 2px #eee, 3px 3px 2px #000;
+      }
+      .content {
+        position: absolute;
+        font-family: 'Lilita One', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        display: flex;
+        align-items: center;
+        top: 30px;
+        right: -616px;
+        animation: right-to-left 15s infinite;
+      }
+
+      .wavy {
+        position: relative;
+        animation: wavy 1.5s ease infinite;
+        top: 0;
+        left: 0;
+      }
+
+      @keyframes wavy {
+        50% {
+          top: -15px;
+        }
+        100% {
+          top: 0;
+        }
+      }
+      @keyframes right-to-left {
+        100% {
+          right: 650px;
+        }
+      }
+    </style>
+  </head>
+  <body class="red-christmas-background">
+    <div class="container">
+      <div class="content">
+        <img
+          class="santa"
+          src="https://img1.picmix.com/output/stamp/normal/3/6/8/9/2409863_0d10d.gif"
+        />
+        <span class="text">Merry Christmas 2024!</span>
+      </div>
+      <img
+        class="trees"
+        src="https://jack-vo.github.io/kid-coding-class/practice-vault/beginner/item-12/winter_snowy_night_forest_landscape_15577333.png"
+      />
+      <img
+        class="snow"
+        src="https://www.animationsoftware7.com/img/agifs/snow02.gif"
+      />
+      <img
+        class="pin"
+        src="https://www.pngall.com/wp-content/uploads/2/Drawing-Pin.png"
+      />
+    </div>
+    <script>
+      function applyAnimation() {
+        let delay = 200;
+        let textElement = document.querySelector('.text');
+        let textContent = textElement.textContent;
+
+        textElement.innerHTML = textContent
+          .split('')
+          .map((letter) => {
+            return `<span>${letter}</span>`;
+          })
+          .join('');
+
+        Array.from(textElement.children).forEach((span, index) => {
+          setTimeout(() => span.classList.add('wavy'), index * 60 + delay);
+        });
+      }
+
+      applyAnimation();
+    </script>
+  </body>
+</html>

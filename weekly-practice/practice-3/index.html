@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <!--1-->
+    <button class="button-1" onclick="PopUpMessage()">Button 1</button>
+
+    <!--2-->
+    <button class="button-2" onclick="PopUpMessage2()">Button 2</button>
+
+    <!--3-->
+    <button class="button-3" onclick="ChangeDivText()">
+      Change the weather
+    </button>
+    <div class="result">Howdy, what a nice day</div>
+
+    <!--4-->
+    <input class="input-1" type="number" min="0" max="10" />
+    <button class="checking-result" onclick="CheckGradeResult()">
+      Check Result
+    </button>
+    <div class="grade-result">Grade result</div>
+
+    <!--5-->
+    <input class="input-2" type="number" />
+    <input class="input-3" type="number" />
+    <button class="button-4">Check bigger number</button>
+
+    <!--functions-->
+    <script>
+      // 1
+      function PopUpMessage() {
+        alert('Hello World');
+      }
+      // 2
+      function PopUpMessage2() {
+        let button2 = document.querySelector('.button-2');
+
+        let button2Text = button2.innerHTML;
+
+        alert(button2Text);
+      }
+      // 3
+      function ChangeDivText() {
+        let button3 = document.querySelector('.result');
+
+        button3.innerHTML = 'Oh my, what a rainy day!';
+      }
+      // 4
+      function CheckGradeResult() {
+        let studentscore = document.querySelector('.input-1').value;
+        let resultDiv = document.querySelector('.grade-result');
+        if (studentscore == 10) {
+          resultDiv.innerHTML = 'Fantastic! I have nothing else to teach you';
+        } else if (studentscore >= 7 && studentscore <= 9) {
+          resultDiv.innerHTML =
+            'Great job, but you still have a long way to go';
+        } else if (studentscore >= 4 && studentscore <= 6) {
+          resultDiv.innerHTML = 'Mate, try harder next time';
+        } else if (studentscore >= 1 && studentscore <= 3) {
+          resultDiv.innerHTML =
+            'Our center is open 24/7, the reception is over there';
+        } else {
+          resultDiv.innerHTML = 'I give up';
+        }
+
+        // step 3
+        // set the result to the innerHTML of grade-result
+
+        let result = document.querySelector('.grade-result');
+      }
+      // 5
+      function ComparingNumbers() {
+        let NumberA = document.querySelector('.input-2').value;
+        let NumberB = docuemnt.querySelector('.input-3').value;
+
+        
+      }
+    </script>
+  </body>
+</html>

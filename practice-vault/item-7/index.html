@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        font-family: 'SUSE', sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-size: 25px;
+      }
+      .container {
+        border: 20px solid #fcd3e3;
+        border-left-color: #95e6df;
+        border-bottom-color: #95e6df;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        box-shadow: 1px 7px 15px rgba(0, 0, 0, 0.5),
+          inset 0 0 10px rgba(0, 0, 0, 0.4);
+      }
+      .content {
+        padding: 30px;
+        border: 8px dotted #aaddfe;
+        text-align: center;
+        height: 400px;
+        width: 700px;
+        position: relative;
+      }
+      .award {
+        font-weight: bold;
+        font-size: 30px;
+      }
+      .title {
+        color: orangered;
+        font-weight: bold;
+        font-size: 40px;
+        text-shadow: 2px 2px 1px #333;
+      }
+      .profile {
+        width: 180px;
+      }
+      .name {
+        width: 400px;
+        font-size: 40px;
+        border-bottom: 3px dotted #666;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 220px;
+      }
+      .text {
+        gap: 15px;
+      }
+      .corner-1 {
+        width: 100px;
+        position: absolute;
+        left: -55px;
+        top: -55px;
+      }
+
+      .corner-2 {
+        width: 100px;
+        transform: scale(-1, 1);
+        position: absolute;
+        right: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="" />
+      <img src="" />
+      <img src="" />
+      <div class="content">
+        <img
+          class="corner-1"
+          src="https://i.pinimg.com/originals/a2/94/66/a294669e569c68ee777acaa990d21bd9.gif"
+        />
+        <img
+          class="corner-2"
+          src="https://media.tenor.com/fqDzKdvLIhYAAAAi/dinosaur-dancing-dino.gif"
+        />
+        <img src="https://media.tenor.com/jIbb8QAArX8AAAAi/blukittie-blu.gif" />
+        <img
+          class="corner-3"
+          src="https://media.tenor.com/IW5jiF1BZHQAAAAi/confetti-glitter.gif"
+        />
+        <img
+          class="corner-4"
+          class="profile"
+          src="https://i.pinimg.com/originals/84/ca/bf/84cabfb16569c12eb3de04dc2f11374e.gif"
+        />
+        <div class="text">
+          <div class="award">Certificate</div>
+          <div class="">for completing</div>
+          <div class="title">HTML / CSS Code Ninja Trial</div>
+          <div class="">This certificate is passed down to</div>
+          <div class="name">Raymond Dubos</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+      }
+      .magazine-img {
+        background-image: url('https://images.unsplash.com/photo-1576005391034-242dd8f40823');
+        height: 100%;
+        background-size: cover;
+        flex: 1;
+        background-position: center center;
+      }
+      .magazine-content {
+        flex: 1;
+        font-family: 'SUSE', sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        padding: 100px;
+      }
+      .heading {
+        display: flex;
+        text-align: center;
+        font-size: 80px;
+        width: 450px;
+        border-bottom: 1px solid lightgrey;
+        position: relative;
+        left: 50px;
+      }
+      .sub-heading {
+        color: grey;
+        font-size: 20px;
+        width: 600px;
+        padding-bottom: 20px;
+      }
+      .big-m {
+        background-size: cover;
+        width: 80px;
+        height: 80px;
+        background-size: cover;
+        margin-right: 10px;
+        float: left;
+        line-height: 0.8;
+        color: #00B7EB;
+        font-size: 80px;
+        text-shadow: -1px 1px red, -2px 2px blue, -2px 2px blue, -3px 3px blue, -4px 4px blue, -5px 5px blue, -6px 6px blue;
+      }
+      .content {
+        display: flex;
+        gap: 40px;
+      }
+      .section {
+        flex: 1;
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+      }
+      .decorater {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16px;
+        height: 16px;
+        background-color: lightgrey;
+        border-radius: 100px;
+        left: 210px;
+        top: 189px;
+        border: 5px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="magazine-img"></div>
+    <div class="magazine-content">
+      <h1 class="heading">Seems like heaven <span class="decorater"></span></h1>
+      <div class="sub-heading">
+        "Just when you're in heaven, life hands you a pair of running shoes!"
+      </div>
+      <div class="content">
+        <div class="section">
+          <div>
+            <span class="big-m">M</span>ax had always dreamed of the perfect
+            Sunday: cozy bed, snacks within reach, and every streaming service
+            at his fingertips. Today, that dream was finally coming true. He had
+            stocked up on popcorn, candy, and enough soda to float a small boat.
+          </div>
+          <div>
+            Wrapped in his softest blanket, he flicked on the TV and sank into
+            the cushions. "This," he thought, "is heaven."
+          </div>
+        </div>
+
+        <div class="section">
+          <div>
+            Just as Max found the perfect movie, his phone buzzed. It was a
+            message from his friend Lisa: "Ready for our 5K run?" Max's eyes
+            widened in horror.
+          </div>
+          <div>
+            He had completely forgotten! With a groan, he looked from the TV to
+            his running shoes by the door. "Well," he sighed, "it seemed like
+            heaven... while it lasted!"
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

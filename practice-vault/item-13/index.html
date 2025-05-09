@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 30px;
+      }
+      .calculator {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+      }
+      .body {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <input class="first-number" id="input_number" type="text" name="name" />
+      </div>
+      <div>
+        <select class="operator" id="select_method" name="Operator">
+          <option value="Plus">Plus</option>
+          <option value="Minus">Minus</option>
+          <option value="Times">Times</option>
+          <option value="Divide by">Divide - by</option>
+        </select>
+      </div>
+      <div>
+        <input
+          class="second-number"
+          id="input_number"
+          type="text"
+          name="name"
+        />
+      </div>
+      <div>=</div>
+      <div class="result">
+        <input class="input result" type="number" readonly />
+      </div>
+    </div>
+    <div class="calculator">
+      <button class="calculate-button" onclick="calculate()">Calculator</button>
+    </div>
+
+    <script>
+      function calculate() {
+        let firstNumber = Number(document.querySelector('.first-number').value);
+
+        console.log(firstNumber);
+
+        let secondNumber = Number(document.querySelector('.second-number').value);
+
+        console.log(secondNumber);
+        let operator = document.querySelector('.operator').value;
+        console.log(operator);
+        let result;
+
+        if (operator == 'Plus') {
+          result = firstNumber + secondNumber;
+        } else if (operator == 'Minus') {
+          result = firstNumber - secondNumber;
+        } else if (operator == 'Times') {
+          result = firstNumber * secondNumber;
+        } else if (operator == 'Divide by') {
+          result = firstNumber / secondNumber;
+        }
+        document.querySelector('.result').innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

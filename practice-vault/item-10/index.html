@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .button {
+        background-color: crimson;
+        color: white;
+        border-radius: 5px;
+        font-size: 20px;
+        padding: 15px 20px;
+        width: 200px;
+        border: none;
+      }
+      .heading {
+        display: flex;
+        justify-content: center;
+      }
+      .sub-heading {
+        display: flex;
+        justify-content: center;
+      }
+      .choice {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+      }
+      .text {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: 20px;
+      }
+      .correct-result {
+        margin-top: 20px;
+        font-size: 30px;
+        text-decoration: underline;
+        color: orangered;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">Guess the number</h1>
+    <div class="sub-heading">
+      Pick your number range. If the robot randomly picks a number within the
+      range you pick, you WIN!
+    </div>
+
+    <div class="text">
+      <div class="player-choice">Player picks:</div>
+      <div class="computer-choice">Computer picks:</div>
+      <div class="correct-result"></div>
+    </div>
+
+    <div class="choice">
+      <button class="button" onclick="pickRange(0, 10)">0-10</button>
+      <button class="button" onclick="pickRange(11, 20)">11-20</button>
+      <button class="button" onclick="pickRange(21, 30)">21-30</button>
+    </div>
+
+    <script>
+      function pickRange(min, max) {
+        let playerChoiceMessage = `Player picks: ${min} - ${max}`;
+
+        document.querySelector('.player-choice').innerHTML =
+          playerChoiceMessage;
+
+        let randomNumber = Math.round(Math.random() * 30);
+
+        let robotChoiceMessage = `Computer picks: ${randomNumber}`;
+
+        document.querySelector('.computer-choice').innerHTML =
+          robotChoiceMessage;
+
+        let resultMessage;
+
+        if (randomNumber > min && randomNumber < max) {
+          resultMessage = 'You WIN!';
+        } else {
+          resultMessage = 'You LOSE!';
+        }
+
+        document.querySelector('.correct-result').innerHTML = resultMessage;
+      }
+    </script>
+  </body>
+</html>

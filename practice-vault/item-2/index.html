@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      @keyframes left-to-right {
+        10% {
+          left: -50px;
+        }
+        100% {
+          left: 775px;
+        }
+      }
+      @keyframes left-to-right {
+        10% {
+          left: -50px;
+        }
+        100% {
+          left: 775px;
+        }
+      }
+
+      .container {
+        width: 800px;
+        height: 600px;
+        border: 2px solid grey;
+        position: relative;
+      }
+      .red {
+        width: 70px;
+        height: 70px;
+        background-color: red;
+        position: absolute;
+        top: 250px;
+        animation: left-to-right 6s forwards infinite;
+        left: -50px;
+      }
+      .blue {
+        width: 70px;
+        height: 70px;
+        background-color: blue;
+        position: absolute;
+        right: 400px;
+        animation: left-to-right 6s forwards infinite;
+        left: 750px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="red"></div>
+      <div class="blue"></div>
+    </div>
+  </body>
+</html>

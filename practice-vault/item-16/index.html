@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s
+      }
+      .red {
+        background-color: red;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .green {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .purple {
+        background-color: purple;
+      }
+      .pink {
+        background-color: pink;
+      }
+      .button-1 {
+        color: white;
+        background-color: black;
+        border-radius: 20px;
+        padding: 10px;
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        border: none;
+        font-size: 24px;
+        transition: all 0.3s;
+      }
+      .button-1:hover {
+        transform: scale(1.2,1.2);
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body class="red">
+    <button class="button-1" onclick="changeTheColor()">
+      Change the color
+    </button>
+    <script>
+      function changeTheColor() {
+        let body = document.querySelector('body');
+
+        if (body.classList.contains('red')) {
+          body.classList.remove('red');
+          body.classList.add('orange');
+        } else if (body.classList.contains('orange')) {
+          body.classList.remove('orange');
+          body.classList.add('yellow');
+        } else if (body.classList.contains('yellow')) {
+          body.classList.remove('yellow');
+          body.classList.add('green');
+        } else if (body.classList.contains('green')) {
+          body.classList.remove('green');
+          body.classList.add('blue');
+        } else if (body.classList.contains('blue')) {
+          body.classList.remove('blue');
+          body.classList.add('purple');
+        } else if (body.classList.contains('purple')) {
+          body.classList.remove('purple');
+          body.classList.add('pink');
+        } else if (body.classList.contains('pink')) {
+          body.classList.remove('pink');
+          body.classList.add('red');
+        }
+      }
+    </script>
+  </body>
+</html>

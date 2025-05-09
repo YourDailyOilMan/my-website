@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .my-box {
+        background-color: grey;
+        width: 100px;
+        height: 100px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+      }
+      .red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!--HTML-->
+    <div class="container">
+      <div class="my-box"></div>
+      <button onclick="turnRed()">Turning Red</button>
+      <button onclick="goBackToNormalColor()">Go back to normal color</button>
+    </div>
+
+    <!--Function-->
+    <script>
+      function turnRed() {
+        let myBox = document.querySelector('.my-box');
+        myBox.classList.add('red');
+      }
+      function goBackToNormalColor() {
+        let myBox = document.querySelector('.my-box');
+        myBox.classList.remove('red');
+      }
+    </script>
+  </body>
+</html>

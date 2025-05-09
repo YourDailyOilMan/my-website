@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 480px;
+      }
+      .button {
+        width: 120px;
+        height: 120px;
+        border-radius: 20px;
+        font-size: 50px;
+        background-color: lightgrey;
+        border: 4px solid #bbb;
+        color: transparent;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .selected {
+        background-color: white;
+        color: red;
+      }
+      .correct {
+        background-color: lightgreen;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="button item-1" onclick="selectItem('.item-1')">A</button>
+      <button class="button item-2" onclick="selectItem('.item-2')">B</button>
+      <button class="button item-3" onclick="selectItem('.item-3')">C</button>
+      <button class="button item-4" onclick="selectItem('.item-4')">C</button>
+      <button class="button item-5" onclick="selectItem('.item-5')">A</button>
+      <button class="button item-6" onclick="selectItem('.item-6')">B</button>
+    </div>
+    <script>
+      let previousSelectedItem;
+
+      function selectItem(itemClassName) {
+        let selectedItem = document.querySelector(itemClassName);
+        selectedItem.classList.add('selected');
+
+        if (!previousSelectedItem) {
+          previousSelectedItem = selectedItem;
+        } else {
+          if (previousSelectedItem.innerHTML === selectedItem.innerHTML) {
+            previousSelectedItem.classList.add('correct');
+            selectedItem.classList.add('correct');
+          } else {
+            previousSelectedItem.classList.remove('selected');
+            SelectedItem.classLIst.remove('selected');
+            previousSelectedItem = undefined;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

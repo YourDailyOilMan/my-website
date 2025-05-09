@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <!--1-->
+    <button class="button-1" onclick="PopUpMessage()">Hello</button>
+
+    <!--2-->
+    <button class="button-2" onclick="PopUpMessage2('My name is ABC')">
+      Click ME
+    </button>
+
+    <!--3-->
+    <div class="result">Empty</div>
+    <button class="button-3" onclick="ChangeDivName()">
+      Change the div content
+    </button>
+
+    <!--4-->
+    <input class="input-1" placeholder="Type something..." />
+    <button class="button-4" onclick="ChangeInputValue()">
+      Get Input Value
+    </button>
+
+    <!--5-->
+    <div class="result-2">Another Empty Div</div>
+    <input class="input-2" placeholder="Type something..." />
+    <button class="button-5" onclick="ChangeDivName2()">
+      Change div content based on input
+    </button>
+
+    <!--6-->
+    <div class="result-3">Waiting for result...</div>
+    <input class="input-3" placeholder="Type a number" />
+    <button class="button-6" onclick="ChangeDivName3()">
+      Check if number is larger than 100
+    </button>
+
+    <!--functions-->
+    <script>
+      // 1
+      function PopUpMessage() {
+        alert('Hello');
+      }
+
+      // 2
+      function PopUpMessage2(message) {
+        alert(message);
+      }
+
+      // 3
+      function ChangeDivName() {
+        let button3 = document.querySelector('.result');
+
+        button3.innerHTML = 'My content has been changed!';
+      }
+
+      // 4
+      function ChangeInputValue() {
+        let input1 = document.querySelector('.input-1');
+
+        let input1Value = input1.value;
+
+        alert(input1Value);
+      }
+
+      // 5
+      function ChangeDivName2() {
+        let result = document.querySelector('.input-2');
+
+        let resultValue = result.value;
+
+        document.querySelector('.result-2').innerHTML = result.value;
+      }
+
+      // 6
+      function ChangeDivName3() {
+        let input2 = document.querySelector('.input-3');
+
+        let input2Value = input2.value;
+
+        let result = document.querySelector('.result-3');
+
+        if (input2Value > 100) {
+          result.innerHTML = `Input number ${input2Value} is larger than 100`;
+        } else if (input2Value < 100) {
+          result.innerHTML = `Input number ${input2Value} is smaller than 100`;
+        } else {
+          result.innerHTML = `Input number ${input2Value} is 100`;
+        }
+      }
+    </script>
+  </body>
+</html>

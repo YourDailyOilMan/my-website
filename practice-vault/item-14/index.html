@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      @keyframes move-like-crazy {
+        10% {
+          left: -50px;
+        }
+        100% {
+          left: 775px;
+        }
+      }
+      @keyframes move-up-down {
+        10% {
+          up: -50px;
+        }
+        100% {
+          down: 775px;
+        }
+      }
+      .missed-box {
+        height: 100%;
+        width: 100%;
+        background-color: #ccc;
+      }
+      .container {
+        width: 700px;
+        height: 600px;
+        position: relative;
+      }
+      .crazy-box {
+        width: 60px;
+        height: 60px;
+        background-color: #dc143c;
+        position: absolute;
+      }
+      .normal-box {
+        width: 60px;
+        height: 60px;
+        background-color: #143fdc;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="missed-box"></div>
+      <div class="crazy-box"></div>
+      <div class="normal-box"></div>
+    </div>
+    <div><span class="score">0</span></div>
+  </body>
+</html>

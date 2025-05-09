@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue riding hood</title>
+    <link rel="stylesheet" type="text/css" href="global.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <style>
+      @keyframes popup {
+        0% {
+          bottom: -180px;
+        }
+        100% {
+          bottom: 50px;
+        }
+      }
+      @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+      .sections {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        font-family: 'Lobster', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .section {
+        position: relative;
+      }
+      .writing {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 40px;
+        right: 40px;
+        top: 140px;
+        color: white;
+        font-size: 30px;
+        background: rgb(0 0 0 / 0.83);
+        padding: 30px;
+        border-radius: 20px;
+      }
+      .section img {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        animation: rainbowShadow 10s infinite;
+      }
+      .question {
+        margin: 20px;
+        font-size: 30px;
+        font-weight: 700;
+      }
+      .blue-riding-hood {
+        width: 140px;
+        position: absolute;
+        bottom: -180px;
+        left: 510px;
+        animation: popup 2s forwards 1 3s;
+      }
+      .page {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body class="indie-flower-regular">
+    <div class="container">
+      <div class="page page-4 tilt-in-fwd-tr">
+        <div class="text">
+          <span class="blue">Blue</span> Riding Hood leaves home with her basket
+          and arrives at a crossroad.
+        </div>
+        <div class="question">Which road will she take?</div>
+        <div class="sections">
+          <div class="section">
+            <div class="writing">The Fun Looooong road</div>
+            <img
+              src="https://img.freepik.com/free-vector/beautiful-landscape-nature-with-flat-illustration-valley-spruce-forest-nature-tourism-landscape-travel-mountains-adventure-concept_1150-37321.jpg"
+            />
+          </div>
+          <div class="section">
+            <div class="writing">The Boring Sneaky Shortcut</div>
+            <img
+              src="https://img.freepik.com/free-vector/forest-scene-with-various-forest-trees_1308-61222.jpg"
+            />
+          </div>
+        </div>
+        <img
+          class="blue-riding-hood"
+          src="https://labs.learnosity.com/solutions/sales-enablement/custom-ui/blue-riding-hood/assets/img/blueridinghood.png"
+        />
+      </div>
+    </div>
+  </body>
+</html>

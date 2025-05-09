@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Practice</title>
+    <style>
+      .button-1 {
+        width: 100px;
+        height: 50px;
+        background-color: lime;
+      }
+      .button-2 {
+        width: 100px;
+        height: 50px;
+        background-color: turquoise;
+      }
+      .button-3 {
+        width: 100px;
+        height: 50px;
+        background-color: violet;
+      }
+      .button-4 {
+        width: 100px;
+        height: 50px;
+        background-color: Pink;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="button-1" onclick="PopUpMessage()">Hello World</button>
+
+    <button class="button-2" onclick="PopUpMessage2('Hello World 2')">
+      Hello World 2
+    </button>
+
+    <button class="button-3" onclick="ChangeButtonName()">
+      Change my label
+    </button>
+
+    <button class="button-4" onclick="MathEquation()">2 + 2</button>
+
+    <div class="result">Empty</div>
+
+    <button class="button-5" onclick="SolveEquation()">8 x 3 - 1000</button>
+  </body>
+  <script>
+    function PopUpMessage() {
+      alert('hello world');
+    }
+
+    function PopUpMessage2(message) {
+      alert(message);
+    }
+
+    function ChangeButtonName() {
+      let button3 = document.querySelector('.button-3');
+
+      button3.innerHTML = 'hello world 3';
+    }
+
+    function MathEquation() {
+      let button4 = document.querySelector('.result');
+
+      button4.innerHTML = 'The result of 2 + 2 = 4';
+    }
+
+    function SolveEquation() {
+      let result = 8 * 3 - 1000;
+
+      alert(result);
+    }
+  </script>
+</html>
