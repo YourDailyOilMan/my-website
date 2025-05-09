@@ -1,0 +1,21 @@
+{
+    "name": "my-website",
+    "version": "0.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/YourDailyOilMan/my-website.git",
+    "author": "Raymond Ly Dubos <raymonddubos731@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "start": "servor --reload"
+    },
+    "stackblitz": {
+        "installDependencies": true
+    },
+    "devDependencies": {
+        "prettier": "^3.3.3"
+    },
+    "dependencies": {
+        "servor": "^4.0.2"
+    }
+ }
+ 
