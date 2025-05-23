@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>HTML Template</title>
+   <style>
+    .ZoomIn {
+      Width: 300px;
+      height: 300px;
+    }
+    .ZoomOut {
+      Width: 100px;
+      height: 100px;
+    }
+   </style>
+ </head>
+ <body>
+    <!--HTML-->
+    <!--1-->
+    <button class="button-1" onclick="ChangeButtonName()">Click Me</button>
+
+    <!--2-->
+<input class="input-1" type="text">
+<button class="button-2" onclick="TextInputEcho()">Echo</button>
+<p class="result"></p>
+
+    <!--3-->
+<img class="Image-1" src="https://files.cults3d.com/uploaders/29183757/illustration-file/25cb9e7f-2710-41ad-8930-cd97bd08a3d8/toothless-dancing-toothless.gif">
+<button class="button-3" onclick="ImageZoomIn()">Zoom In</button>
+<button class="button-4" onclick="ImageZoomOut()">Zoom Out</button>
+    <!--Functions-->
+    <script>
+    //1
+        function ChangeButtonName() {
+ let button1 = document.querySelector('.button-1');
+ button1.innerHTML = "Clicked"
+        }
+    //2 
+    function TextInputEcho() {
+let input1 = document.querySelector('.input-1');
+let inputValue = input1.value;
+let result1 = document.querySelector('.result');
+result1.innerHTML = inputValue; 
+    }
+    //3 
+    function ImageZoomIn() {
+      let button3 = document.querySelector('.button-3');
+
+      if (button3.classList.contains('ZoomIn') === false) {
+        button3.classList.add('ZoomIn')
+      }
+    }
+    function ImageZoomOut() {
+      let button4 = document.querySelector('.button-4');
+
+      if (button3.classList.contains('ZoomOut'))
+    }
+    </script>
+ </body>
+</html>
