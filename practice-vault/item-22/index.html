@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .orginal-box {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+      }
+      .big-box {
+        width: 150px;
+        height: 150px;
+        background-color: #ccc;
+      }
+      .red {
+        background-color: red;
+      }
+      .hide {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="button-1" onclick="changeBoxColor()">
+      Change the box background to "red"
+    </button>
+    <button class="button-2" onclick="changeboxSize()">
+      Make the box become bigger
+    </button>
+    <button class="button-3" onclick="hideBox()">Hide the box</button>
+    <div class="square">
+      <div class="orginal-box"></div>
+    </div>
+    <script>
+      function changeBoxColor() {
+        let box = document.querySelector('.orginal-box');
+        let button = document.querySelector('.button-1');
+
+        if (box.classList.contains('red')) {
+          box.classList.remove('red');
+          button.innerHTML = 'Change the box background to "red"';
+        } else {
+          box.classList.add('red');
+          button.innerHTML = 'Change the box background to default color';
+        }
+      }
+      function changeboxSize() {
+        let box = document.querySelector('.orginal-box');
+        let button1 = document.querySelector('.button-2');
+
+        if (box.classList.contains('big-box')) {
+          box.classList.remove('big-box');
+          button1.innerHTML = 'Make the box become bigger';
+        } else {
+          box.classList.add('big-box');
+          button1.innerHTML = 'Make the box goes back to its default size';
+        }
+      }
+      function hideBox() {
+        let box = document.querySelector('.orginal-box');
+        let button2 = document.querySelector('.button-3');
+
+        if (box.classList.contains('hide')) {
+          box.classList.remove('hide');
+          button1.innerHTML = 'Make the box become bigger';
+        } else {
+          box.classList.add('hide');
+          button1.innerHTML = 'Make the box goes back to its default size';
+        }
+      }
+    </script>
+  </body>
+</html>

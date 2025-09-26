@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <!--1-->
+    <button class="button-1" onclick="numberSum()">
+      Calculate the sum of 10 numbers
+    </button>
+    <div class="result-1"></div>
+    <script>
+      //Practice
+      for (let i = 0; i < 999; i++) {
+        console.log('I am Ray');
+      }
+      //1
+      function numberSum() {
+        let numbers = [
+          8, 5425435, 5454, 42542543, 543254, 5425425, 42543543, 3940384593,
+          405930594, 4095930,
+        ];
+        let sum = 0;
+        let result = document.querySelector('.result-1');
+        for (let i = 0; i < numbers.length; i++) {
+          sum = sum + numbers[i];
+        }
+
+        result.innerHTML = `The total sum is: ${sum}`;
+      }
+    </script>
+  </body>
+</html>

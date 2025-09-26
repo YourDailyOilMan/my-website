@@ -56,6 +56,13 @@ body {
 .blue {
   color: #1ca4ed;
 }
+.red {
+  color: red;
+  font-size: 23px;
+}
+.bold {
+  font-weight: bold;
+}
 .tilt-in-fwd-tr {
   animation: tilt-in-fwd-tr 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }

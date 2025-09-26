@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style></style>
+  </head>
+  <body>
+    <!--1-->
+    <button class="button-1" onclick="inputMessage()">Show text</button>
+    <input class="input-1" />
+    <!--2-->
+    <button class="button-2" onclick="numberChecker()">
+      Greater than or less than 10
+    </button>
+    <input type="number" class="input-2" />
+    <!--3-->
+    <button class="button-3" onclick="ColorListDisplay()">Color Display</button>
+    <!--4-->
+    <button class="button-4" onclick="FavouriteThings()">Make a list</button>
+    <div class="list-1"></div>
+    <!--5-->
+    <button class="button-5" onclick="NumberSum()">Calculate</button>
+    <div class="result"></div>
+    <!--6-->
+    <button class="button-6" onclick="getLargestNumber()">
+      What is the largest number
+    </button>
+    <script>
+      //1
+      function inputMessage() {
+        let input = document.querySelector('.input-1');
+        let inputValue = input.value;
+        alert(inputValue);
+      }
+      //2
+      function numberChecker() {
+        let input2 = document.querySelector('.input-2');
+        let inputValue = input2.value;
+        if (inputValue < 10) {
+          alert(`${inputValue} is less then 10`);
+        } else if (inputValue > 10) {
+          alert(`${inputValue} is greater than 10`);
+        }
+      }
+      //3
+      const colors = ['Red', 'Blue', 'Green'];
+      function ColorListDisplay() {
+        let lastIndex = colors.length - 1;
+        let lastcolor = colors[lastIndex];
+        alert(`The last color is ${lastcolor}`);
+      }
+      //4
+      const favourite = ['design', 'c-drama', 'minecraft'];
+      function FavouriteThings() {
+        let list = document.querySelector('.list-1');
+        list.innerHTML = `<ul>
+            <li>${favourite[0]}</li>
+            <li>${favourite[1]}</li>
+            <li>${favourite[2]}</li>
+          </ul>
+          <div>The total number of items is: ${favourite.length}</div>`;
+      }
+      //5
+      const numbers = [45, 36, 27];
+      function NumberSum() {
+        let result1 = document.querySelector('.result');
+        let total = numbers[0] + numbers[1] + numbers[2];
+        result1.innerHTML = `<div>The total of 45, 36 and 27 is ${total}</div>`;
+      }
+      //6
+      let randomNumbers = [53, 1, 101, 99, 100];
+      function getLargestNumber() {
+        let currentlargestnumber = randomNumbers[0];
+        if (currentlargestnumber < randomNumbers[1]) {
+          currentlargestnumber = randomNumbers[1];
+        }
+        if (currentlargestnumber < randomNumbers[2]) {
+          currentlargestnumber = randomNumbers[2];
+        }
+        if (currentlargestnumber < randomNumbers[3]) {
+          currentlargestnumber = randomNumbers[3];
+        }
+        if (currentlargestnumber < randomNumbers[4]) {
+          currentlargestnumber = randomNumbers[4];
+        }
+        if (currentlargestnumber < randomNumbers[5]) {
+          currentlargestnumber = randomNumbers[5];
+        }
+        alert(currentlargestnumber);
+      }
+      for (let i = 0; i < 5; i++) {
+        console.log('I am ray');
+      }
+    </script>
+  </body>
+</html>

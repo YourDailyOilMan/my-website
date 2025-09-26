@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lilita+One&family=SUSE:wght@100..800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>HTML Template</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .header {
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 80px;
+      }
+      .header-writing {
+        color: white;
+        display: flex;
+        gap: 90px;
+      }
+      .header-button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        height: 50px;
+        font-family: 'SUSE', sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 100px;
+        font-style: normal;
+        font-size: 20px;
+      }
+      .header-button:hover {
+        background-color: white;
+        color: black;
+        border-radius: 20px;
+      }
+      .contact-button {
+        height: 40px;
+        width: 110px;
+        border-radius: 10px;
+        font-family: 'SUSE', sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 100px;
+        font-style: normal;
+        font-size: 18px;
+      }
+      .logo-image {
+        height: 50px;
+      }
+      .center-writing-1 {
+        font-size: 50px;
+        font-family: 'DM Serif Display', serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .center-focus {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px;
+        gap: 20px;
+      }
+      .center-writing-2 {
+        font-family: 'Antic', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        opacity: 30%;
+        padding-bottom: 100px;
+      }
+      .image-middle {
+        object-fit: fill;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header-writing">
+          <a><img class="logo-image" src="download.png" /></a>
+          <button class="header-button home-button">Home</button>
+          <button class="header-button tutor-button">Art Tutors</button>
+          <button class="header-button lesson-button">Lesson Schedule</button>
+          <button class="header-button join-button">Join us</button>
+        </div>
+        <button class="contact-button">Contact us</button>
+      </header>
+      <div class="center-focus">
+        <div class="center-writing-1">We encourage and create</div>
+        <div class="center-writing-2">Inspiring creative growth</div>
+        <img
+          class="image-middle"
+          src="https://i0.wp.com/creditcarrots.com/wp-content/uploads/2020/09/Norberts-Gambit-with-TD-Direct-Investing-TDDI.jpg?w=1200&ssl=1"
+        />
+      </div>
+      <div class="bottom"></div>
+    </div>
+  </body>
+</html>

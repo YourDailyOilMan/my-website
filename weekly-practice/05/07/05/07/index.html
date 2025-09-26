@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <style>
+    .box-1 {
+      border: 1px black solid;
+      width: 100px;
+      height: 100px;
+    }
+    .button-3 {
+      background-color: red;
+    }
+    .button-4 {
+      background-color: orange;
+    }
+    .button-5 {
+      background-color: yellow;
+    }
+    .button-6 {
+      background-color: rgb(47, 255, 54);
+    }
+    .button-7 {
+      background-color: rgb(0, 72, 255);
+    }
+    .red {
+      color: red;
+    }
+    .orange {
+      color: orange;
+    }
+    .yellow {
+      color: yellow;
+    }
+    .green {
+      color: rgb(47, 255, 54);
+    }
+    .blue {
+      color: rgb(0, 72, 255);
+    }
+  </style>
+  <body>
+    <!--1-->
+    <button class="button-1" onclick="changeText()">Click Me</button>
+    <!--2-->
+    <input type="text" class="input-1" />
+    <button class="button-2" onclick="textEcho()">Echo</button>
+    <p class="result-1"></p>
+    <!--3-->
+    <div class="box-1"></div>
+    <button class="button-3" onclick="changeColor('red')">Red</button>
+    <button class="button-4" onclick="changeColor('orange')">Orange</button>
+    <button class="button-5" onclick="changeColor('yellow')">Yellow</button>
+    <button class="button-6" onclick="changeColor('green')">Green</button>
+    <button class="button-7" onclick="changeColor('blue')">Blue</button>
+    <script>
+      //1
+      function changeText() {
+        let button1 = document.querySelector('.button-1');
+        button1.innerHTML = 'Clicked';
+      }
+      //2
+      function textEcho() {
+        let result1 = document.querySelector('.result-1');
+        let input1 = document.querySelector('.input-1');
+        result1.innerHTML = input1.value;
+      }
+      //3
+      let previousColor;
+      function changeColor(color) {
+        let box = document.querySelector('.box-1');
+        box.classList.add(color);
+        box.classList.remove(previousColor);
+        previousColor = color;
+      }
+      //4 
+      function getLargestNumber() {
+        let numbers = [2131, 21414,4,432143,4324,32432,324,324,4534,3453];
+        let currentLargestNumber = 0;
+
+      }
+    </script>
+  </body>
+</html>

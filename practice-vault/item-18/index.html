@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+      .button-1 {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #007bff;
+        color: white;
+        border-radius: 5px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="button-1" onclick="clickMe()">
+        Click me to open an alert
+      </button>
+    </div>
+    <script>
+      function clickMe() {
+        let message = 'button clicked';
+
+        alert(message);
+      }
+    </script>
+  </body>
+</html>

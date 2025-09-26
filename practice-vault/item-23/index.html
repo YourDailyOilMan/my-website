@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <div>List of Names</div>
+    <button class="button-1" onclick="printNames()">Print Names</button>
+    <ul class="list"></ul>
+    <script>
+      let names = ['Alice', 'Bob', 'Charlie', 'Diana', 'Edward'];
+
+      function printNames() {
+        let button1 = document.querySelector('.button-1');
+        let nameslist = document.querySelector('.list');
+        let listContent = '';
+        for (let i = 0; i < names.length; i++) {
+          let currentItem = names[i];
+          listContent = listContent + `<li>${currentItem}</li>`;
+        }
+
+        nameslist.innerHTML = listContent;
+      }
+    </script>
+  </body>
+</html>

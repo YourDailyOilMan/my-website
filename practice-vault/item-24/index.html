@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <div>List of Names</div>
+    <input class="input-1" placeholder="Number" type="number" />
+    <button class="button-1" onclick="numberList()">Print</button>
+    <ul class="list-1"></ul>
+    <script>
+      function numberList() {
+        let input = document.querySelector('.input-1');
+        let list = document.querySelector('.list-1');
+        inputValue = input.value;
+        for (let i = 0; i < inputValue; i++) {
+          list.innerHTML = `<li>${i}</li>`;
+        }
+      }
+    </script>
+  </body>
+</html>
+<!--ul, li, imput value, for loop value, similar to 23, 
+must be positive,alert if 0 or negative-->

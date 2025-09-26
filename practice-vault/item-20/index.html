@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      body {
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+      }
+      .background-1 {
+        background-color: white;
+        width: 500px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="background-1">
+        <div class="sub-title">Enter Your Names</div>
+        <input class="input-1" type="text" placeholder="First Name" />
+        <input class="input-2" type="text" placeholder="Last Name" />
+        <button class="button-1" onclick="enterYourName()">
+          Show Full Name
+        </button>
+        <div class="result"></div>
+      </div>
+    </div>
+    <script>
+      function enterYourName() {
+        let firstNameInput = document.querySelector('.input-1');
+        let lastNameInput = document.querySelector('.input-2');
+        let result1 = document.querySelector('.result');
+        result1.innerHTML = `Full name: ${firstNameInput.value} ${lastNameInput.value}`;
+      }
+    </script>
+  </body>
+</html>

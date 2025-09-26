@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        width: 500px;
+        height: 100vh;
+        margin: 3px;
+      }
+      .input-1 {
+        height: 60px;
+        width: 325px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        margin-bottom: 3px;
+        display: flex;
+        text-align: right;
+      }
+      .btn {
+        width: 80px;
+        height: 40px;
+        background-color: #dbdce0;
+        color: #4d4e52;
+        border: none;
+        border-radius: 2px;
+      }
+      .btn-del {
+        background: red;
+        color: white;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        margin-bottom: 3px;
+      }
+      .btn-equal {
+        background: rgb(70, 70, 255);
+        color: white;
+      }
+      .header {
+        position: relative;
+        width: 330px;
+        border: 1px black solid;
+      }
+      .history {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+      }
+      .history ul {
+        margin-top: 10px;
+        list-style-type: none;
+        padding: 5px;
+        border: 1px solid black;
+        min-width: 200px;
+        display: none;
+      }
+      .history li {
+        padding: 10px;
+      }
+      .history li:hover {
+        background-color: lightgray;
+        cursor: pointer;
+      }
+      .show-history ul {
+        display: block;
+      }
+      .equation {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="history show-history">
+          <button onclick="toggleHistory()">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/27/OOjs_UI_icon_history.svg"
+            />
+          </button>
+          <ul>
+            <li>98980</li>
+          </ul>
+        </div>
+        <div class="equation">
+          <div class="current-equation"></div>
+          <input type="text" class="input-1 current-equation" />
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn" onclick="onCalculatorButtonClick(`(`)">(</button>
+        <button class="btn" onclick="onCalculatorButtonClick(`)`)">)</button>
+        <button class="btn btn-del" onclick="onCalculatorButtonClick('DEL')">
+          DEL
+        </button>
+        <button class="btn" onclick="onCalculatorButtonClick('AC')">AC</button>
+      </div>
+      <!--1-->
+      <div class="row">
+        <button class="btn" onclick="onCalculatorButtonClick(7)">7</button>
+        <button class="btn" onclick="onCalculatorButtonClick(8)">8</button>
+        <button class="btn" onclick="onCalculatorButtonClick(9)">9</button>
+        <button class="btn" onclick="onCalculatorButtonClick(`/`)">/</button>
+      </div>
+      <!--2-->
+      <div class="row">
+        <button class="btn" onclick="onCalculatorButtonClick(4)">4</button>
+        <button class="btn" onclick="onCalculatorButtonClick(5)">5</button>
+        <button class="btn" onclick="onCalculatorButtonClick(6)">6</button>
+        <button class="btn" onclick="onCalculatorButtonClick(`*`)">*</button>
+      </div>
+      <!--3-->
+      <div class="row">
+        <button class="btn" onclick="onCalculatorButtonClick(1)">1</button>
+        <button class="btn" onclick="onCalculatorButtonClick(2)">2</button>
+        <button class="btn" onclick="onCalculatorButtonClick(3)">3</button>
+        <button class="btn" onclick="onCalculatorButtonClick(`-`)">-</button>
+      </div>
+      <!--4-->
+      <div class="row">
+        <button class="btn" onclick="onCalculatorButtonClick(0)">0</button>
+        <button class="btn" onclick="onCalculatorButtonClick(`.`)">.</button>
+        <button class="btn btn-equal" onclick="onCalculatorButtonClick(`=`)">
+          =
+        </button>
+        <button class="btn" onclick="onCalculatorButtonClick(`+`)">+</button>
+      </div>
+    </div>
+    <script>
+      function toggleHistory() {
+        let history = document.querySelector('.history');
+        history.classList.toggle('show-history');
+      }
+      function onCalculatorButtonClick(action) {
+        console.log(action);
+        let input = document.querySelector('.input-1');
+        let Expression = document.querySelector('.current-equation');
+
+        if (action === 'AC') {
+          input.value = '';
+        } else if (action === '=') {
+          Expression.innerHTML = input.value;
+          input.value = eval(input.value);
+        } else if (action === 'DEL') {
+          input.value = input.value.slice(0, -1);
+        } else {
+          input.value = input.value + action;
+        }
+      }
+    </script>
+    <!-- Remeber to make header for input then place input above, 
+     remove input and continue to style-->
+  </body>
+</html>
