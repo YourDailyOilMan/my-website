@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .side-bar {
+        width: 600px;
+        height: 1000px;
+        margin-left: 25px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        border-radius: 20px;
+        border: 10px solid grey;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        font-family: "Chewy", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .range-marks {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .range-input {
+        width: 100%;
+      }
+
+      .range-container {
+        width: 300px;
+      }
+      .column-1 {
+        width: 550px;
+        margin-left: 125px;
+        margin-top: 25px;
+      }
+      .column-2 {
+        width: 550px;
+        margin-left: 125px;
+        margin-top: 25px;
+      }
+      .teacher-profile-box-1 {
+        width: 400px;
+        height: 250px;
+        border: 10px solid grey;
+        border-radius: 20px;
+      }
+      .teacher-profile-box-2 {
+        width: 400px;
+        height: 250px;
+        border: 10px solid grey;
+        border-radius: 20px;
+        margin-top: 50px;
+      }
+      .main-tutor-page {
+        display: flex;
+      }
+    </style>
+  </head>
+  <link rel="stylesheet" type="text/css" href="global.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  />
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-writing">
+          <a><img class="logo-image" src="download.png" /></a>
+          <a href="home-page.html" class="header-button home-button">Home</a>
+          <a href="tutor-page.html" class="header-button tutor-button"
+            >Art Tutors</a
+          >
+          <a href="lesson-page.html" class="header-button lesson-button"
+            >Lesson Schedule</a
+          >
+          <a href="join-page.html" class="header-button join-button">Join us</a>
+        </div>
+        <a class="contact-button">Contact us</a>
+      </div>
+      <div class="main-tutor-page">
+        <div class="side-bar">
+          <ul>
+            <span class="bold">Art Medium</span>
+            <li><input type="checkbox">Drawing</li>
+            <li><input type="checkbox">Painting</li>
+            <li><input type="checkbox">Mixed Media</li>
+            <li><input type="checkbox">Sculpture</li>
+            <li><input type="checkbox">Printmaking</li>
+            <li><input type="checkbox">Photography</li>
+            <li><input type="checkbox">Modern Materials</li>
+            <li><input type="checkbox">Historical Mediums</li>
+          </ul>
+          <ul class="lesson-length">
+            <span class="bold">Lesson length</span>
+            <div class="range-container">
+            <input
+              class="range-input"
+              type="range"
+              name="speed"
+              min="0"
+              max="100"
+            />
+
+            <div class="range-marks">
+              <span>30 mins</span>
+              <span>1 hr</span>
+              <span>1 hr 30 mins</span>
+              <span>2 hrs</span>
+            </div>
+          </ul>
+          <ul>
+            <span class="bold">Class size avalibility</span>
+            <div class="range-container">
+            <input
+              class="range-input"
+              type="range"
+              name="speed"
+              min="0"
+              max="100"
+            />
+
+            <div class="range-marks">
+              <span>0</span>
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4+</span>
+            </div>
+          </div>
+          </ul>
+        </div>
+        <div class="column-1">
+          <div class="teacher-profile-box-1"></div>
+          <div class="teacher-profile-box-2"></div>
+          <div class="teacher-profile-box-2"></div>
+        </div>
+        <div class="column-2">
+          <div class="teacher-profile-box-1"></div>
+          <div class="teacher-profile-box-2"></div>
+          <div class="teacher-profile-box-2"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
