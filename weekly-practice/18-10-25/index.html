@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+  </head>
+  <body>
+    <!--3-->
+    <button class="button-1" onclick="printNumbers()">
+      Print from 0 to 1000
+    </button>
+    <ul class="list"></ul>
+    <!--4 "It will loop to a array"-->
+    <input class="input-2" type="text" />
+    <button class="button-2" onclick="searchItem()">Search</button>
+    <!--5-->
+    <input class="input-3" type="number" />
+    <button class="button-3" onclick="fitlerByLength()">Filter</button>
+    <ul class="list-1"></ul>
+    <!--6-->
+    <button class="button-4" onclick="sumAllNumbers()">
+      Sum of all numbers
+    </button>
+    <div class="result-1"></div>
+    <!--7-->
+    <button class="button-5" onclick="reverseArrayDisplay()">
+      Reverse Order
+    </button>
+    <div class="result-2"></div>
+    <script>
+      //3
+      function printNumbers() {
+        let list1 = document.querySelector('.list');
+        let content = '';
+        for (let i = 0; i <= 1000; i++) {
+          console.log(i);
+          content = content + `<li>${i}</li>`;
+        }
+
+        list1.innerHTML = content;
+      }
+      //4
+      function searchItem() {
+        let items = ['apple', 'banana', 'cherry', 'date'];
+        let input = document.querySelector('.input-2');
+        inputValue = input.value;
+        let hasItemFound = false;
+
+        for (let i = 0; i < items.length; i++) {
+          let currentItem = items[i];
+
+          if (currentItem === inputValue) {
+            hasItemFound = true;
+          }
+        }
+
+        if (hasItemFound) {
+          alert('Item found');
+        } else {
+          alert('Item Not found');
+        }
+      }
+      //5 loop + current + number of character + if current > input
+      function fitlerByLength() {
+        let animals = ['cat', 'dog', 'elephant', 'bird', 'fish'];
+        let input = document.querySelector('.input-3');
+        let list = document.querySelector('.list-1');
+        let inputValue = input.value;
+
+        listHTML = '';
+        // loop the array
+        for (let i = 0; i < animals.length; i++) {
+          // get the current item
+          let currentItem2 = animals[i];
+          // get the current items length
+          let currentItemLength = currentItem2.length;
+
+          // get the if the number of characters is above the input's value
+          if (currentItemLength > inputValue) {
+            listHTML = listHTML + `<li>${currentItem2}</li>`;
+          }
+        }
+        list.innerHTML = listHTML;
+      }
+      //6
+      function sumAllNumbers() {
+        let numbers = [10, 15, 34, 56, 23, 97, 61];
+        let result = document.querySelector('.result-1');
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          sum = sum + numbers[i];
+        }
+        result.innerHTML = `The sum of the given numbers is ${sum}`;
+      }
+      //7
+      function reverseArrayDisplay() {
+        let reverseNumbers = [10, 20, 30, 40, 50];
+        let result = document.querySelector('.result-2');
+        let reverse = '';
+        for (let i = reverseNumbers.length - 1; i >= 0; i--) {
+          reverse = reverse + reverseNumbers[i];
+        }
+        result.innerHTML = reverse;
+      }
+    </script>
+  </body>
+</html>
