@@ -13,8 +13,8 @@
         let input = document.querySelector('.input-1');
         let list = document.querySelector('.list-1');
         inputValue = input.value;
-        for (let i = 0; i < inputValue; i++) {
-          list.innerHTML = `<li>${i}</li>`;
+        for (let i = 1; i < inputValue; i++) {
+          list.innerHTML = list.innerHTML + `<li>${i}</li>`;
         }
       }
     </script>

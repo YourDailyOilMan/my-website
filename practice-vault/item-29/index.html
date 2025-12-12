@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+      }
+      .button {
+        width: 50px;
+        height: 50px;
+      }
+      .container {
+        width: 1000px;
+        height: 1000px;
+        border: 5px grey dashed;
+        margin-top: 40px;
+        position: relative;
+      }
+      .work {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="work">
+      <div class="buttons">
+        <button class="button left" onclick="move('left')">Left</button>
+        <button class="button right" onclick="move('right')">Right</button>
+        <button class="button up" onclick="move('up')">Up</button>
+        <button class="button down" onclick="move('down')">Down</button>
+      </div>
+      <div class="container">
+        <div class="box"></div>
+      </div>
+    </div>
+    <script>
+      // move(direction) - use if/else if to detect the direction
+      // step 1
+      // create 2 varaibles leftPosition = 0; topPosition = 0;
+      // step 2: calcylate the new position based on  the direction
+      // step 3:  Google how to set style top and left for an element in javacript
+      // For the block on the dashed line, use if else
+      let leftPosition = 0;
+      let topPosition = 0;
+      function move(direction) {
+        let box = document.querySelector('.box');
+
+        if (direction == 'right') {
+          leftPosition = leftPosition + 10;
+        } else if (direction == 'left') {
+          leftPosition = leftPosition - 10;
+        } else if (direction == 'up') {
+          topPosition = topPosition - 10;
+        } else if (direction == 'down') {
+          topPosition = topPosition + 10;
+        }
+
+        box.style.position = 'absolute';
+        box.style.left = `${leftPosition}px`;
+        box.style.top = `${topPosition}px`;
+      }
+    </script>
+  </body>
+</html>

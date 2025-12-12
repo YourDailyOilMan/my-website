@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style></style>
+  </head>
+  <body>
+    <div>
+      <h2>Profile details</h2>
+      <div class="profile"></div>
+    </div>
+    <div>
+      <h2>Enter and Submit Your Details</h2>
+      <div>First name</div>
+      <div>
+        <input
+          class="label firstname-input"
+          type="text"
+          placeholder="First Name"
+        />
+        <div>Last name</div>
+      </div>
+      <div>
+        <input
+          class="label lastname-input"
+          type="text"
+          placeholder="Last Name"
+        />
+        <div>Age</div>
+      </div>
+      <div>
+        <input class="label age-input" type="number" placeholder="Age" />
+        <div>Occupation</div>
+      </div>
+      <input
+        class="label occupation-input"
+        type="text"
+        placeholder="Occupation"
+      />
+      <div>
+        <div>Avatar URL</div>
+        <input
+          class="label avatar-url-input"
+          type="url"
+          placeholder="https://..."
+        />
+      </div>
+    </div>
+    <div>
+      <button class="submit-button" onclick="insertProfile()">Submit</button>
+    </div>
+    <script>
+      function insertProfile() {
+        let button = document.querySelector('.submit-button');
+        let content = document.querySelector('.profile');
+        let firstNameInput = document.querySelector('.firstname-input');
+        let lastNameInput = document.querySelector('.lastname-input');
+        let ageInput = document.querySelector('.age-input');
+        let occupationInput = document.querySelector('.occupation-input');
+        let avatarUrlInput = document.querySelector('.avatar-url-input');
+        let profile = {
+          firstName: `${firstNameInput.value}`,
+          lastName: `${lastNameInput.value}`,
+          age: `${ageInput.value}`,
+          occupation: `${occupationInput.value}`,
+          avatarURL: `${avatarUrlInput.value}`,
+        };
+        content.innerHTML = `<div><img src="${profile.avatarURL}"></div>
+        <div>
+          <p>Name: ${profile.firstName} ${profile.lastName}</p>
+          <p>Age: ${profile.age}</p>
+          <p>Occupation: ${profile.occupation}</p>
+          </div>`;
+      }
+    </script>
+    <!--Make sure to do css and use the one providied in uncle jack one in future to practice css-->
+  </body>
+</html>

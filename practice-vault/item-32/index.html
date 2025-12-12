@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .movie {
+        width: 150px;
+        height: 150px;
+        margin: 30px;
+      }
+      .movie:hover {
+        box-shadow: 0 0 20px blue;
+      }
+      .movie-choice {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .pop-up {
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        gap: 20px;
+        background-color: rgba(128, 128, 128, 0.45);
+        display: none;
+      }
+      .pop-up-content {
+        width: 500px;
+        height: 550px;
+        background-color: white;
+      }
+      .pop-up-content img {
+        max-width: 500px;
+      }
+      .pop-up-close-button {
+        border-radius: 5%;
+        border: none;
+        width: 90px;
+        height: 30px;
+        font-size: 15px;
+      }
+      .pop-up-title {
+        font-size: 40px;
+      }
+      .visible {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="movie-choice"></div>
+    <div class="pop-up">
+      <div class="pop-up-content">
+        <img
+          class="pop-up-image"
+          src="https://images-r2.thebrag.com/rs/uploads/2020/10/100-Kill-Bill-Vol-1-1.jpg"
+        />
+        <div class="pop-up-title">ffe</div>
+      </div>
+      <button class="pop-up-close-button" onclick="hidePopUp()">Close</button>
+    </div>
+    <script>
+      let images = [
+        {
+          title: 'Kill Bill Volume 1',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/100-Kill-Bill-Vol-1-1.jpg',
+        },
+        {
+          title: 'Star Wars Episode III: Revenge of the Sith',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/99-Star-Wars-ep-III.jpg',
+        },
+        {
+          title: 'Moulin Rouge! ',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/98-Moulin-Rouge.jpg',
+        },
+        {
+          title: 'Spider-Man: Far From Home',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/97-Spider-man-Far-from-Home.jpg',
+        },
+        {
+          title: 'The Fifth Element',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/96-The-Fifth-Element.jpg',
+        },
+        {
+          title: 'Vertigo',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/95-Vertigo.jpg',
+        },
+        {
+          title: "Monty Python's Life of Brian",
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/94-Monty-Pythons-Life-of-Brian.jpg',
+        },
+        {
+          title: 'There Will Be Blood',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/93-There-Will-Be-Blood.jpg',
+        },
+        {
+          title: 'Whiplash',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/92-Whiplash.jpg',
+        },
+        {
+          title: 'The Goonies',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/91-The-Goonies.jpg',
+        },
+        {
+          title: 'Blade Runner 2049',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/90-Blade-Runner-2049.jpg',
+        },
+        {
+          title: 'La La Land',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/89-La-La-Land.jpg',
+        },
+        {
+          title: 'The Avengers',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/88-The-Avengers.jpg',
+        },
+        {
+          title: 'No Country for Old Men',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/87-No-Country-for-Old-Men.jpg',
+        },
+        {
+          title: 'Dead Poets Society',
+          url: 'https://images-r2.thebrag.com/rs/uploads/2020/10/86-Dead-Poets-Society.jpg',
+        },
+      ];
+      let container = document.querySelector('.movie-choice');
+
+      for (let i = 0; i < images.length; i++) {
+        let currentItem = images[i];
+
+        container.innerHTML =
+          container.innerHTML +
+          ` <div onclick="showPopUp(${i})"> <img class="movie" src="${currentItem.url}"/> </div>`;
+      }
+
+      //index determines content
+      function showPopUp(itemIndex) {
+        let popUp = document.querySelector('.pop-up');
+        let popUpTitle = document.querySelector('.pop-up-title');
+        let popUpImage = document.querySelector('.pop-up-image');
+        popUp.classList.add('visible');
+
+        let selectedItem = images[itemIndex];
+
+        console.log('selected item', selectedItem);
+
+        popUpTitle.innerHTML = selectedItem.title;
+        popUpImage.src = selectedItem.url;
+      }
+      function hidePopUp() {
+        let popUp = document.querySelector('.pop-up');
+        popUp.classList.remove('visible');
+      }
+      // object, loop, similar to this ex, popup, img gallery
+    </script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .profile-background {
+        border-radius: 100px;
+        width: 100px;
+        height: 100px;
+      }
+      .profile {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        gap: 40px;
+      }
+      .individual-profile {
+        border: 1px grey solid;
+        width: 220px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>List of Profiles</h2>
+      <button onclick="profileDisplay()">Print Profiles</button>
+    </div>
+    <div>
+      <div class="profile"></div>
+    </div>
+    <script>
+      let profiles = [
+        {
+          fullName: 'Alice Johnson',
+          gender: 'Female',
+          occupation: 'Web Developer',
+          avatar: {
+            images: {
+              large:
+                'https://t3.ftcdn.net/jpg/05/98/48/88/360_F_598488869_fiLUgajDxyaoxE9D3SuHMZfD56IjrBXe.jpg',
+            },
+          },
+        },
+        {
+          fullName: 'Bob Smith',
+          gender: 'Male',
+          occupation: 'Graphic Designer',
+          avatar: {
+            images: {
+              large:
+                'https://sm.ign.com/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.jpg',
+            },
+          },
+        },
+        {
+          fullName: 'Carol White',
+          gender: 'Female',
+          occupation: 'Project Manager',
+          avatar: {
+            images: {
+              large:
+                'https://t3.ftcdn.net/jpg/05/98/48/88/360_F_598488869_fiLUgajDxyaoxE9D3SuHMZfD56IjrBXe.jpg',
+            },
+          },
+        },
+        {
+          fullName: 'Dave Brown',
+          gender: 'Male',
+          occupation: 'Software Engineer',
+          avatar: {
+            images: {
+              large:
+                'https://sm.ign.com/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.jpg',
+            },
+          },
+        },
+      ];
+
+      function profileDisplay() {
+        let Profiles = document.querySelector('.profile');
+
+        // step 1 loop through array
+        for (let i = 0; i < profiles.length; i++) {
+          // looking at the current profile, how to get it
+          let currentItem = profiles[i];
+
+          console.log(currentItem);
+          Profiles.innerHTML =
+            Profiles.innerHTML +
+            `<div>
+            <div class="individual-profile">
+              <img class="profile-background" src="${currentItem.avatar.images.large}"/>
+              <div>Name: ${currentItem.fullName}<div>
+              <div>Gender: ${currentItem.gender}</div>
+              <div>Occupation: ${currentItem.occupation}</div>
+              </div>
+            </div>`;
+        }
+      }
+    </script>
+    <!--Make usre to use for loop for array and do css-->
+  </body>
+</html>

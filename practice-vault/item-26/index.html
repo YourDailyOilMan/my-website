@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      body {
+        background-color: #f4f4f4;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box-background {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Person Details</h2>
+      <div class="content">Content Hidden</div>
+      <div>
+        <button class="button-1" onclick="toggleDetails()">Show Details</button>
+      </div>
+    </div>
+    <script>
+      let isDetailsVisible = false;
+      function toggleDetails() {
+        let person = {
+          firstName: 'John',
+          lastName: 'Doe',
+          age: 30,
+          occupation: 'Software engineer',
+        };
+        let button = document.querySelector('.button-1');
+        let contentContainer = document.querySelector('.content');
+
+        if (isDetailsVisible == false) {
+          contentContainer.innerHTML = `
+          <p>Name: ${person.firstName} ${person.lastName}</p>
+          <p>Age: ${person.age}</p>
+          <p>Occupation: ${person.occupation}</p>`;
+          button.innerHTML = `Hide Details`;
+          isDetailsVisible = true;
+        } else {
+          isDetailsVisible = false;
+          contentContainer.innerHTML = `<p>Content Hidden</p>`;
+          button.innerHTML = `Show Details`;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      .container {
+        width: 400px;
+        height: 400px;
+        border: 3px grey dashed;
+        margin-top: 40px;
+        position: relative;
+      }
+      .work {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="work">
+      <div class="container">
+        <div class="box"></div>
+      </div>
+    </div>
+    <script>
+      // #30
+      document.addEventListener('keydown', function (event) {
+        event.preventDefault();
+        switch (event.key) {
+          case 'ArrowUp':
+            console.log('Up arrow pressed');
+            move('up');
+            break;
+          case 'ArrowDown':
+            console.log('Down arrow pressed');
+            move('down');
+            break;
+          case 'ArrowLeft':
+            console.log('Left arrow pressed');
+            move('left');
+            break;
+          case 'ArrowRight':
+            console.log('Right arrow pressed');
+            move('right');
+            break;
+          default:
+            break;
+        }
+      });
+      // #29 + #30
+      // move(direction) - use if/else if to detect the direction
+      // step 1
+      // create 2 varaibles leftPosition = 0; topPosition = 0;
+      // step 2: calcylate the new position based on  the direction
+      // step 3:  Google how to set style top and left for an element in javacript
+      // For the block on the dashed line, use if else
+      let leftPosition = 0;
+      let topPosition = 0;
+      function move(direction) {
+        let container = document.querySelector('.container');
+        let box = document.querySelector('.box');
+
+        if (direction == 'right') {
+          leftPosition = leftPosition + 10;
+        } else if (direction == 'left') {
+          leftPosition = leftPosition - 10;
+        } else if (direction == 'up') {
+          topPosition = topPosition - 10;
+        } else if (direction == 'down') {
+          topPosition = topPosition + 10;
+        }
+
+        if (leftPosition < 0) {
+          leftPosition = 0;
+        }
+        if (topPosition < 0) {
+          topPosition = 0;
+        }
+
+        let containerBoundary = container.getBoundingClientRect();
+        let boxBoundary = box.getBoundingClientRect();
+        let boxHeight = boxBoundary.height;
+        let containerHeight = containerBoundary.height;
+        if (topPosition > containerHeight - boxHeight) {
+          topPosition = containerHeight - boxHeight;
+        }
+        let boxWidth = boxBoundary.width;
+        let containerWidth = containerBoundary.width;
+        if (leftPosition > containerWidth - boxWidth) {
+          leftPosition = containerWidth - boxWidth;
+        }
+
+        box.style.position = 'absolute';
+        box.style.left = `${leftPosition}px`;
+        box.style.top = `${topPosition}px`;
+      }
+      function getElementSize(element) {
+        if (!(element instanceof Element)) {
+          throw new Error('Invalid element provided.');
+        }
+        let rect = element.getBoundingClientRect();
+        return {
+          width: rect.width,
+          height: rect.height,
+        };
+      }
+    </script>
+  </body>
+</html>
