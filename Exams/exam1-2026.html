@@ -77,44 +77,43 @@
       .popup-overlay.show {
         display: flex;
       }
-      .member-card {
-        background-color: #16213e;
-        padding: 30px;
-        border-radius: 10px;
+      .registration-form {
+        margin-bottom: 40px;
+        border: 1px solid red;
         width: 400px;
-      }
-      .registration-font {
-        font-weight: 600;
-        font-size: 14px;
-        padding: 10px;
-      }
-      .insert-name {
-        height: 100px;
-        width: 340px;
-        display: flex;
-        flex-direction: column;
-      }
-      .registration-input {
-        width: 340px;
-        height: 40px;
-        border-radius: 5px;
-        padding-left: 5px
-      }
-      ::placeholder {
-        padding: 10px;
-      }
-      .registration-section {
-        padding-bottom: 50px;
-      }
-      .movie {
-        width: 200px;
-        height: 300px;
-        margin: 30px;
+        background-color: #16213e;
         border-radius: 10px;
+        padding: 30px;
       }
-      .movies-gallery {
+      .registration-name {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400px;
+        margin-bottom: 10px;
+      }
+      .registration-email {
+        margin-bottom: 10px;
+      }
+      .registration-genre {
+        margin-bottom: 10px;
+      }
+      .member-container {
         display: flex;
-        flex-direction: row;
+        gap: 20px;
+      }
+      .member-card {
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        font-size: 13px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #16213e;
+      }
+      .member-template {
+        font-weight: bold;
+      }
+      .member-tite {
+        color: #e94560;
       }
 
       /* ========================================
@@ -158,31 +157,33 @@
                    -->
 
         <!-- Member card - will be shown after form submit -->
-        <div class="registration-container">
-          <div class="member-card">
-            <div class="insert-name">
-              <span class="registration-font">Your Name</span>
-              <input
-                class="registration-input"
-                id="name"
-                placeholder="Enter your name"
-              />
+        <div class="member-container">
+          <div class="registration-form">
+            <div class="registration-name">
+              <div class="name-title">Your Name</div>
+              <input class="name-input" placeholder="Enter your name" />
             </div>
-            <div>
-              <div class="registration-font">Email Address</div>
-              <input
-                class="registration-input"
-                id="email"
-                placeholder="Enter your email"
-              />
+            <div class="registration-email">
+              <div class="email-title">Email Address</div>
+              <input class="email-input" placeholder="Enter your email" />
             </div>
-            <div>
-              <div class="registration-font">Favourite Genre</div>
-              <select id="genre">
+            <div class="registration-genre">
+              <div class="genre-title">Favourite Genre</div>
+              <select class="genre-selection">
                 <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Horror">Horror</option>
+                <option value="Drama">Drama</option>
+                <option value="Sci-fi">Sci-fi</option>
               </select>
             </div>
             <button onclick="submitForm()">Join Now</button>
+          </div>
+          <div class="member-card">
+            <h3 class="member-tite">Welcome!</h3>
+            <div class="member-name member-template">Name:</div>
+            <div class="member-email member-template">Email:</div>
+            <div class="member-genre member-template">Favourite Genre:</div>
           </div>
         </div>
       </section>
@@ -256,24 +257,28 @@
             'A paraplegic Marine dispatched to Pandora on a unique mission becomes torn between following orders and protecting the world he feels is his home.',
         },
       ];
-      let container = document.querySelector('.movies-gallery');
 
-      for (let i = 0; i < movies.length; i++) {
-        let currentItem = movies[i];
-
-        container.innerHTML =
-          container.innerHTML +
-          ` <div onclick="showMoviePopup(${i})"> <img class="movie" src="${currentItem.poster}"/> </div>`;
-      }
       /* ========================================
               EXERCISE 1: SUBMIT FORM FUNCTION
               Complete this function
               ======================================== */
       function submitForm() {
+        //innerHtml, ${}
         // TODO: Get the values from name, email, and genre inputs
         // TODO: Select the member card element
         // TODO: Set the innerHTML of member card to display the info
         // TODO: Add 'show' class to member card to make it visible
+        let name = document.querySelector('.name-input');
+        let email = document.querySelector('.email-input');
+        let genre = document.querySelector('.genre-selection');
+        let card = document.querySelector('.member-card');
+        let nameValue = name.value;
+        let emailValue = email.value;
+        let genreValue = genre.value;
+        card.innerHTML = `<h3 class="member-tite">Welcome!</h3>
+            <div class="member-name member-template">Name: ${nameValue}</div>
+            <div class="member-email member-template">Email: ${emailValue}</div>
+            <div class="member-genre member-template">Favourite Genre: ${genreValue}</div>`;
       }
 
       /* ========================================
@@ -290,6 +295,11 @@
       // - onclick="showMoviePopup(i)" where i is the index
 
       // TODO: Set the innerHTML of .movies-gallery to your generated HTML
+      let container = document.querySelector('.movie-gallery');
+      for (let i = 0; i < movies.length; i++) {
+        currentItem = movies[i];
+        currentItem.name;
+      }
 
       /* ========================================
               EXERCISE 2: SHOW MOVIE POPUP FUNCTION
