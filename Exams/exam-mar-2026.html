@@ -341,12 +341,9 @@
       }
       document.querySelector('.gallery').innerHTML = content;
 
-      function displayModalContent(currentAnimeId) {
-        for (i = 0; i < animeList.lenght; i++) {
-          animeList[i].id = currentAnimeId;
-          let currentItem = animeList[i];
-        }
-        document.querySelector('.modalAnimeDescriptione').innerHTML =
+      function displayModalContent(index) {
+        let currentItem = animeList[index];
+        document.querySelector('#modalAnimeDescription').innerHTML =
           currentItem.description;
       }
     </script>
